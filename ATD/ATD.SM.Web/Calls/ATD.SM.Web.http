@@ -1,0 +1,4 @@
+# check if alive
+GET {{url}}/person-api/health
+
+### get a person

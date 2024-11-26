@@ -1,0 +1,1 @@
+﻿dapr run --app-id dapr-sb --resources-path "D:\Projects\atd-demos-dapr\ATD\ATD.BB.Cli\Components" --dapr-grpc-port 50001

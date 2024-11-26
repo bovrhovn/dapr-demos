@@ -1,0 +1,6 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Dapr Hello app 3700" type="PowerShellRunType" factoryName="PowerShell" scriptUrl="D:\Projects\atd-demos-dapr\scripts\02-b-hello-custom-dapr-app.ps1" commandOptions="–noprofile" workingDirectory="$FileDir$" executablePath="C:\Program Files\PowerShell\7\pwsh.exe">
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,6 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Dapr Building Block CLI" type="PowerShellRunType" factoryName="PowerShell" scriptUrl="D:\Projects\atd-demos-dapr\scripts\03-a-building-blocks-cli.ps1" commandOptions="–noprofile" workingDirectory="$FileDir$" executablePath="C:\Program Files\PowerShell\7\pwsh.exe">
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

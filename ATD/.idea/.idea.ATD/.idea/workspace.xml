@@ -7,21 +7,13 @@
     <projectFile>ATD.SM.Cli/ATD.SM.Cli.csproj</projectFile>
     <projectFile profileName="http">ATD.SM.Web/ATD.SM.Web.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="473da02d-c6d4-4a95-8830-f0e3f513c882" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ATD.BB.Cli/Components/servicebus-topic.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ATD.BB.Secrets/AdditionalFiles/secrets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ATD.BB.Secrets/Components/azurekeyvault.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ATD.BB.Secrets/Components/localsecretstore.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATD.BB.Cli/Components/azurekeyvault.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.BB.Cli/Components/azurekeyvault.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATD.BB.Cli/Components/servicebus-pubsub.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATD.SM.Cli/Components/azurekeyvault.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Cli/Components/azurekeyvault.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATD.SM.Cli/Components/tablestorage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Cli/Components/tablestorage.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -39,15 +31,26 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/bovrhovn/atd-demos-dapr&quot;,
+    &quot;url&quot;: &quot;https://github.com/bovrhovn/dapr-demos.git&quot;,
     &quot;accountId&quot;: &quot;b5e9f4a3-a228-4242-ab2a-859efc0b9ef2&quot;
   }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ATD.BB.Cli/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ATD.SM.Web/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2pOIBdShR5va93RypxNNdHaKQHZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +61,10 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -162,7 +169,17 @@
       <updated>1732630560269</updated>
       <workItem from="1732630561454" duration="64000" />
       <workItem from="1732630636441" duration="20000" />
+      <workItem from="1732630671843" duration="590000" />
     </task>
+    <task id="LOCAL-00001" summary="adding initial block">
+      <option name="closed" value="true" />
+      <created>1732631121305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732631121305</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,5 +189,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="adding initial block" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding initial block" />
   </component>
 </project>

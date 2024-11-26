@@ -3,6 +3,6 @@
 public static class RouteHelper
 {
     public const string HealthRoute = "health";
-    public const string PersonRoute = "person-api";
+    public const string PersonRoute = "persons";
    
 }

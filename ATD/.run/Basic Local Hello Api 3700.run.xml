@@ -21,7 +21,7 @@
         </option>
         <option name="executable">
           <ExecutableSnapshot>
-            <option name="id" value="runConfig:.NET Project.Cli - Hello" />
+            <option name="id" value="runConfig:.NET Project.Hello Cli" />
           </ExecutableSnapshot>
         </option>
       </ExecutableRowSnapshot>

@@ -1,4 +1,4 @@
-This repository contains demos for Advanced Technology Days in Zagreb in November 2024 and it is focused on demos regarding Dapr.
+This repository contains demos for conferences in November/December 2024 and it is focused on demos regarding Dapr basic usage.
 
 ## Prerequisites
 

@@ -1,0 +1,86 @@
+﻿@page "{email?}"
+@model IndexPageModel
+@{
+    ViewData["Title"] = "Example on how to add and query person via state api";
+}
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-secondary"
+         role="alert">
+        @Model.Message
+    </div>
+}
+
+<h1 class="display-4">Use below form to add person</h1>
+<p>Enter necessary details to add person</p>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="CurrentPerson.Email"
+               class="form-label">
+            Email address
+        </label>
+        <input aria-describedby="emailHelp"
+               asp-for="CurrentPerson.Email"
+               class="form-control"
+               type="email">
+        <div class="form-text"
+             id="emailHelp">
+            We'll never share your email with anyone else.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CurrentPerson.FullName"
+               class="form-label">
+            Full name
+        </label>
+        <input asp-for="CurrentPerson.FullName"
+               class="form-control"
+               type="text">
+    </div>
+    <div class="mb-3">
+        <label asp-for="CurrentPerson.Age"
+               class="form-label">
+            Age
+        </label>
+        <input asp-for="CurrentPerson.Age"
+               class="form-control"
+               type="number">
+    </div>
+    <button class="btn btn-primary"
+            type="submit">
+        Add to state
+    </button>
+</form>
+<br />
+<hr />
+<br />
+<form>
+    <div class="mb-3">
+        <label class="form-label"
+               for="personEmail">
+            Email address
+        </label>
+        <input class="form-control"
+               id="personEmail"
+               name="email"
+               type="email">
+    </div>
+    <button class="btn btn-primary"
+            type="submit">
+        Retrieve person
+    </button>
+</form>
+@if (!string.IsNullOrEmpty(Model.RetrievedPerson.FullName))
+{
+    <div class="mt-3">
+        <div class="card"
+             style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.RetrievedPerson.FullName</h5>
+                <h6 class="card-subtitle mb-2 text-muted">with email @Model.RetrievedPerson.Email</h6>
+                <h7 class="card-text">Aged: @Model.RetrievedPerson.Age</h7>
+            </div>
+        </div>
+    </div>
+}

@@ -12,12 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="473da02d-c6d4-4a95-8830-f0e3f513c882" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../scripts/04-b-state-management-web.ps1" afterDir="false" />
+    <list default="true" id="473da02d-c6d4-4a95-8830-f0e3f513c882" name="Changes" comment="adding container images and fix with addhealth check for app to run">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ATD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATD.SM.Web.Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web.Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATD.SM.Web.Client/Services/StateApiClientCall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web.Client/Services/StateApiClientCall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATD.SM.Web/Calls/http-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web/Calls/http-client.env.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ATD.SM.Web/Controllers/PersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web/Controllers/PersonController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ATD.SM.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ATD.SM.Web/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../containers/Dapr-Api" beforeDir="false" afterPath="$PROJECT_DIR$/../containers/Dapr-Api" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../containers/Dapr-Web" beforeDir="false" afterPath="$PROJECT_DIR$/../containers/Dapr-Web" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scripts/04-b-state-management-web.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/04-b-state-management-web.ps1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +50,16 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/294078ecfce6fdb942ecfee089f09717de7a6fcfe5efd9fdb6f4f93c0fb4813/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ATD.BB.Cli/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Projects/dapr-demos/ATD/ATD.SM.Web/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ATD.SM.Web/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="HttpClientEndpointsTabState">
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;8550439b3b8ba4fa6a334407063b8b4ae451e688&quot; value=&quot;###&amp;#10;POST http://localhost:5200/persons/add&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" environment="local-dev" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -68,21 +78,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Local Api.executor": "Debug",
+    ".NET Project.Local Web.executor": "Debug",
+    "HTTP Request.ATD.SM.Web | #1.executor": "Run",
+    "HTTP Request.ATD.SM.Web | add person with email.executor": "Run",
+    "HTTP Request.ATD.SM.Web | get a person by email.executor": "Run",
+    "PowerShell.Run Dapr State Management Web.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "local-dev",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Multi-Launch.Basic Local State Management Web + API">
     <configuration name="BB Cli" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/ATD.BB.Cli/bin/Debug/net9.0/ATD.BB.Cli.exe" />
@@ -147,7 +164,8 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ATD.SM.Web" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <envs>
-        <env name="ASPNETCORE_URLS" value="https://localhost:8002" />
+        <env name="ApiOptions__StoreStateName" value="tablestorage" />
+        <env name="ASPNETCORE_URLS" value="https://localhost:8009" />
       </envs>
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -159,6 +177,7 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="net9.0" />
+      <browser url="https://localhost:8009" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -170,7 +189,7 @@
       <option name="PASS_PARENT_ENVS" value="1" />
       <envs>
         <env name="ASPNETCORE_URLS" value="https://localhost:8001" />
-        <env name="WebOptions__WebApiLink" value="https://localhost:8002" />
+        <env name="WebOptions__WebApiLink" value="https://localhost:8009/persons" />
       </envs>
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -205,6 +224,15 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="ATD.SM.Web | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ATD.SM.Web | add person with email" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" executionIdentifier="add person with email" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ATD.SM.Web | get a person by email" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ATD.SM.Web/Calls/ATD.SM.Web.http" executionIdentifier="get a person by email" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Run Dapr State Management Web" type="PowerShellRunType" factoryName="PowerShell" scriptUrl="D:\Projects\dapr-demos\scripts\04-b-state-management-web.ps1" commandOptions="–noprofile" workingDirectory="$FileDir$" executablePath="C:\Program Files\PowerShell\7\pwsh.exe">
       <envs />
       <method v="2" />
@@ -216,6 +244,9 @@
       <item itemvalue=".NET Project.BB Secrets Cli" />
       <item itemvalue=".NET Project.Hello Cli" />
       <item itemvalue=".NET Project.State management CLI" />
+      <item itemvalue="HTTP Request.ATD.SM.Web | #1" />
+      <item itemvalue="HTTP Request.ATD.SM.Web | add person with email" />
+      <item itemvalue="HTTP Request.ATD.SM.Web | get a person by email" />
       <item itemvalue="Multi-Launch.Basic Local Building Block Cli" />
       <item itemvalue="Multi-Launch.Basic Local Building Block Secrets" />
       <item itemvalue="Multi-Launch.Basic Local Hello Api 3600" />
@@ -229,6 +260,13 @@
       <item itemvalue="PowerShell.Run Dapr State Management Cli" />
       <item itemvalue="PowerShell.Run Dapr State Management Web" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.ATD.SM.Web | get a person by email" />
+        <item itemvalue="HTTP Request.ATD.SM.Web | #1" />
+        <item itemvalue="HTTP Request.ATD.SM.Web | add person with email" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -242,7 +280,7 @@
       <workItem from="1732630636441" duration="20000" />
       <workItem from="1732630671843" duration="590000" />
       <workItem from="1732631540727" duration="4108000" />
-      <workItem from="1732691166294" duration="3153000" />
+      <workItem from="1732691166294" duration="10518000" />
     </task>
     <task id="LOCAL-00001" summary="adding initial block">
       <option name="closed" value="true" />
@@ -268,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732651045558</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding container images and fix with addhealth check for app to run">
+      <option name="closed" value="true" />
+      <created>1732696825631</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732696825631</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +327,65 @@
     <MESSAGE value="adding initial block" />
     <MESSAGE value="adding run commands to be run Dapr examples" />
     <MESSAGE value="adding web project and api call" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding web project and api call" />
+    <MESSAGE value="adding container images and fix with addhealth check for app to run" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding container images and fix with addhealth check for app to run" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ATD.SM.Web/Controllers/PersonController.cs</url>
+          <line>72</line>
+          <properties documentPath="D:\Projects\dapr-demos\ATD\ATD.SM.Web\Controllers\PersonController.cs" containingFunctionPresentation="Method 'SavePerson'">
+            <startOffsets>
+              <option value="2392" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2459" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ATD.SM.Web.Client/Services/StateApiClientCall.cs</url>
+          <line>49</line>
+          <properties documentPath="D:\Projects\dapr-demos\ATD\ATD.SM.Web.Client\Services\StateApiClientCall.cs" containingFunctionPresentation="Method 'SavePersonAsync'">
+            <startOffsets>
+              <option value="2076" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2134" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ATD.SM.Web.Client/Services/StateApiClientCall.cs</url>
+          <line>19</line>
+          <properties documentPath="D:\Projects\dapr-demos\ATD\ATD.SM.Web.Client\Services\StateApiClientCall.cs" containingFunctionPresentation="Method 'GetPersonAsync'">
+            <startOffsets>
+              <option value="726" />
+            </startOffsets>
+            <endOffsets>
+              <option value="760" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ATD.SM.Web.Client/Services/StateApiClientCall.cs</url>
+          <line>18</line>
+          <properties documentPath="D:\Projects\dapr-demos\ATD\ATD.SM.Web.Client\Services\StateApiClientCall.cs" containingFunctionPresentation="Method 'GetPersonAsync'">
+            <startOffsets>
+              <option value="667" />
+            </startOffsets>
+            <endOffsets>
+              <option value="709" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

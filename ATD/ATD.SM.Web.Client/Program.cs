@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text.Json.Serialization;
 using ATD.SM.Web.Client.Options;
 using ATD.SM.Web.Client.Services;
 using HealthChecks.UI.Client;
@@ -13,6 +14,8 @@ builder.Services.AddRazorPages()
     .AddRazorPagesOptions(options => options.Conventions.AddPageRoute("/Info/Index", ""));
 builder.Services.AddHttpClient<StateApiClientCall>();
 builder.Services.AddHealthChecks();
+builder.Services.AddControllers().AddJsonOptions(options =>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -22,7 +25,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseRouting();
 app.UseAuthorization();
-app.MapStaticAssets();
+app.UseStaticFiles();
 app.UseExceptionHandler(options =>
 {
     options.Run(async context =>

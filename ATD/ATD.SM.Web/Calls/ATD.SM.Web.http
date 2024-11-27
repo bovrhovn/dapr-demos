@@ -1,4 +1,15 @@
 # check if alive
-GET {{url}}/person-api/health
+GET {{url}}/persons/health
 
-### get a person
+### get a person by email
+GET {{url}}/persons/byemail/bovrhovn@microsoft.com
+
+### add person with email
+POST {{url}}/persons/add
+Content-Type: application/json
+
+{ 
+   "FullName": "Bojan Vrhovnik",
+   "Email": "bovrhovn@microsoft.com",
+   "Age":40 
+}

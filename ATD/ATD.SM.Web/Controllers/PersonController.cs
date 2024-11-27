@@ -27,16 +27,22 @@ public class PersonController(
             { StatusCode = 200, Content = $"I am alive at {DateTime.Now} on {Environment.MachineName}" };
     }
     
-    [HttpGet("byobject/{person}")]
-    public ActionResult<Person> Get([FromState("statestore")] StateEntry<Person> person)
+    [HttpGet]
+    [Route("byobject/{person}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult Get([FromState("statestore")] StateEntry<Person> person)
     {
         if (person.Value is null) return NotFound();
-        return person.Value;
+        return Ok(person.Value);
     }
 
-    [HttpGet("byemail/{email}")]
+    [HttpGet]
+    [Route("byemail/{email}")]
     [Produces(typeof(Person))]
-    public async Task<ActionResult<Person>> GetByEmail(string email)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetByEmailAsync(string email)
     {
         try
         {
@@ -48,8 +54,8 @@ public class PersonController(
                 return Ok(new Person());
             }
 
-            logger.LogInformation($"Data received: {person.FullName}");
-            return person;
+            logger.LogInformation("Data received: {FullName}", person.FullName);
+            return Ok(person);
         }
         catch (Exception e)
         {
@@ -58,19 +64,22 @@ public class PersonController(
         }
     }
 
-    [HttpPost("add")]
-    public async Task<ActionResult<Person>> SavePerson(Person person)
+    [HttpPost]
+    [Route("add")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
+    public async Task<IActionResult> SavePersonAsync([FromBody]Person person)
     {
-        logger.LogInformation($"Saving person {person.FullName}");
+        logger.LogInformation("Saving person {FullName}", person.FullName);
         try
         {
             await client.SaveStateAsync(webSettingsValue.Value.StoreStateName, person.Email, person);
-            logger.LogInformation($"Person {person.FullName} was saved");
+            logger.LogInformation("Person {FullName} was saved", person.FullName);
         }
         catch (Exception e)
         {
             logger.LogError(e.Message);
-            return Problem(e.Message);
+            return Problem(e.Message, statusCode: StatusCodes.Status503ServiceUnavailable);
         }
 
         return Ok();

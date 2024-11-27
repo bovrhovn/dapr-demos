@@ -4,7 +4,6 @@ COPY ["ATD.SM.Models/", "ATD.SM.Models/"]
 RUN dotnet restore "ATD.SM.Models/ATD.SM.Models.csproj"
 RUN dotnet restore "ATD.SM.Web/ATD.SM.Web.csproj"
 COPY . .
-WORKDIR "/src/"
 RUN dotnet build "ATD.SM.Models/ATD.SM.Models.csproj" -c Release -o /ATD.SM.Web
 RUN dotnet build "ATD.SM.Web/ATD.SM.Web.csproj" -c Release -o /app
 

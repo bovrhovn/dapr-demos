@@ -1,0 +1,1 @@
+﻿dapr run --app-id state-management-web-api --app-port 5002 --resources-path "D:\Projects\dapr-demos\ATD\ATD.SM.Cli\Components\tablestorage.yaml"

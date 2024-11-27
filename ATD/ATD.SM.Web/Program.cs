@@ -11,6 +11,7 @@ builder.Services.AddControllers().AddDapr();
 builder.Services.AddOpenApi();
 builder.Services.AddOptions<ApiOptions>()
     .Bind(builder.Configuration.GetSection("ApiOptions"));
+builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment()) app.MapOpenApi();

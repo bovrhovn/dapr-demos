@@ -1,10 +1,9 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-COPY ["ATD.SM.Web.Client.Client/", "ATD.SM.Web.Client/"]
+COPY ["ATD.SM.Web.Client/", "ATD.SM.Web.Client/"]
 COPY ["ATD.SM.Models/", "ATD.SM.Models/"]
 RUN dotnet restore "ATD.SM.Models/ATD.SM.Models.csproj"
 RUN dotnet restore "ATD.SM.Web.Client/ATD.SM.Web.Client.csproj"
 COPY . .
-WORKDIR "/src/"
 RUN dotnet build "ATD.SM.Models/ATD.SM.Models.csproj" -c Release -o /ATD.SM.Web.Client
 RUN dotnet build "ATD.SM.Web.Client/ATD.SM.Web.Client.csproj" -c Release -o /app
 

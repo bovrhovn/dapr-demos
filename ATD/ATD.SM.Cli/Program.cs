@@ -9,7 +9,7 @@ AnsiConsole.WriteLine();
 
 using var client = new DaprClientBuilder().Build();
 
-var person = new Person {FullName = "Bojan Vrhovnik", Email = "bojan.vrhovnik@microsoft.com", Age = 40};
+var person = new Person {FullName = "Igor TheRockStar", Email = "igor@rockstar.eu", Age = 30};
 
 AnsiConsole.MarkupLine($"Adding person [green]{person.FullName}[/] to the state");
 

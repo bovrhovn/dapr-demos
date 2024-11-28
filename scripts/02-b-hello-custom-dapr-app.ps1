@@ -1,1 +1,1 @@
-﻿dapr run --app-id hello-dapr-custom --dapr-http-port 3700 --resources-path D:\Projects\atd-demos-dapr\ATD\ATD.Hello\dev-components
+﻿dapr run --app-id hello-dapr-custom --dapr-http-port 3700 --resources-path "D:\Projects\dapr-demos\ATD\ATD.Hello\dev-components"

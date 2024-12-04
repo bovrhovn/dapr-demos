@@ -1,0 +1,5 @@
+GET {{url}}/sample/
+Accept: application/json
+
+### call dapr
+http://localhost:{{daprPort}}/v1.0/invoke/{{daprAppId}}/method/sample

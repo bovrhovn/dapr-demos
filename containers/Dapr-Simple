@@ -1,0 +1,14 @@
+﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+COPY ["ATD.SimpleWebApi/", "ATD.SimpleWebApi/"]
+RUN dotnet restore "ATD.SimpleWebApi/ATD.SimpleWebApi.csproj"
+COPY . .
+RUN dotnet build "ATD.SimpleWebApi/ATD.SimpleWebApi.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "ATD.SimpleWebApi/ATD.SimpleWebApi.csproj" -c Release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 as final
+WORKDIR /app
+ENV ASPNETCORE_HTTP_PORTS=80
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "ATD.SimpleWebApi.dll"]

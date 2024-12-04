@@ -30,7 +30,7 @@ try
     AnsiConsole.Write(table);
 
     AnsiConsole.MarkupLine("Person will be deleted");
-    await client.DeleteStateAsync(storeName, stateKeyName, cancellationToken: cancellationToken);
+   // await client.DeleteStateAsync(storeName, stateKeyName, cancellationToken: cancellationToken);
 }
 catch (Exception e)
 {
